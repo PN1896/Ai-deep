@@ -6,7 +6,8 @@ from sklearn.model_selection import train_test_split
 
 #Aufbau des NN:
 class Model(torch.nn.Module):
-    def__init__(self):
+    def __init__(self):
+        super(mopdel, self).__init__()
         self.fc1 = nn.Linear(2,10)
         self.fc2 = nn.Linear(10,10)
         self.fc3 = nn.Linear(10,1)
@@ -20,3 +21,4 @@ class Model(torch.nn.Module):
         return x
 
 #Datenverarbeitung:
+data = np.loadtxt ("./data/no_colums_iris_binary.csv", delimiter=",")
