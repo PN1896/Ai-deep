@@ -34,7 +34,7 @@ model = Model()
 #loss = nn.CrossEntropyLoss()
 loss = nn.MSELoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.01)
-epochs = 10000
+epochs = 2000
 epoch_errors =[]
 accuracy_list =[]
 print (x.size())
@@ -47,6 +47,8 @@ for epoch in range(epochs):
     optimizer.step()
 
 print(model(torch.tensor([3,2])))
+
+
 def showTensor(aTensor):
     plt.figure()
     plt.imshow(aTensor.numpy())
@@ -54,7 +56,7 @@ def showTensor(aTensor):
     plt.colorbar()
     plt.show()
 
-x_plot=np.arange(0,10000)
+x_plot=np.arange(0,2000)
 print (len(epoch_errors))
 print (len(x_plot))
 plt.plot(x_plot,epoch_errors)
